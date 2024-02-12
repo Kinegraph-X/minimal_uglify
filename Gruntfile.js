@@ -1,4 +1,5 @@
 var path = require('path');
+var splitOnSemiColonTask;
 
 module.exports = function (grunt) {
 	
@@ -16,6 +17,7 @@ module.exports = function (grunt) {
 		return;
 	}
 	basePath = 'src/';
+	splitOnSemiColonTask = require(process.cwd() + '/' + basePath + currentBundle + '/' + 'splitOnSemiColon');
 	
 	var pkg = grunt.file.readJSON('package.json');
 	pkg.main = path.join(process.cwd(), basePath + '/myCode.js');
@@ -27,7 +29,7 @@ module.exports = function (grunt) {
 			pathToProject : basePath + currentBundle + '/',
 			basePath : basePath,
 			currentProject : currentBundle,
-			localDeployPath : 'build/' + currentBundle
+			localDeployPath : 'build/' + currentBundle + '/'
 		},
 		postProcess : function (config) {
 			config.package = pkg;
@@ -35,5 +37,7 @@ module.exports = function (grunt) {
 		}
 	});
 	
-	grunt.registerTask('default',   ['uglify']);
+	grunt.registerTask('splitOnSemiColon', '', splitOnSemiColonTask);
+	grunt.registerTask('default',   ['uglify:localRelease']);
+	grunt.registerTask('withNewLines',   ['uglify:localRelease', 'splitOnSemiColon']);
 };
