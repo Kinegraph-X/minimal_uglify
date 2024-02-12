@@ -38,6 +38,6 @@ module.exports = function (grunt) {
 	});
 	
 	grunt.registerTask('splitOnSemiColon', '', splitOnSemiColonTask);
-	grunt.registerTask('default',   ['uglify:localRelease']);
-	grunt.registerTask('withNewLines',   ['uglify:localRelease', 'splitOnSemiColon']);
+	grunt.registerTask('default', ['uglify:localRelease']);
+	grunt.registerTask('withNewLines', ['uglify:localRelease', 'splitOnSemiColon']);
 };
