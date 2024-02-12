@@ -1,0 +1,18 @@
+{
+   "name": "Generic",
+   "version": "0.0.1",
+   "description": "Generic dependencies manager - modular \"by project\" grunt build chain",
+   "main": "// should be overridden by gruntfile",
+   "scripts": {},
+   "devDependencies": {
+      "bundle-collapser": "^1.2.1",
+      "grunt": "^0.4.5",
+      "grunt-contrib-uglify": "^5.2.2",
+      "grunt-load-gruntfile": "^0.0.2",
+      "load-grunt-config": "^3.0.0",
+      "load-grunt-tasks": "^3.1.0"
+   },
+   "author": "Sylvain Breil",
+   "license": "MIT",
+   "dependencies": {}
+}
